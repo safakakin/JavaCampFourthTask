@@ -1,0 +1,48 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		//extracted();
+		CustomerManager customerManager=new CustomerManager(new Customer(),new TeacherCreditManager());
+		customerManager.GiveCredit();
+		
+	}
+
+	private static void extracted() {
+		int sayi1=10;
+		int sayi2=20;
+		sayi1=sayi2;
+		sayi2=100;
+		System.out.println(sayi1);
+		
+		int[] sayilar1=new int[] {1,2,3};
+		int[] sayilar2=new int[] {10,20,30};
+		sayilar1=sayilar2;
+		sayilar2[0]=1000;
+		
+		System.out.println(sayilar1[0]);
+		
+		CreditManager creditManager=new CreditManager();
+		creditManager.Calculate();
+		creditManager.Save();	
+		
+		Customer customer =new Customer();
+		customer.setId(1);
+		customer.setCity("Ankara");
+		
+		CustomerManager customerManager = new CustomerManager(customer);
+		customerManager.Save();
+		customerManager.Delete();
+		
+		Company company =new Company();
+		company.setTaxNumber("10000");
+		company.setCompanyName("Arçelik");
+		company.setId(100);
+		
+		CustomerManager customerManager2 = new CustomerManager(customer);
+		
+		Customer c1= new Customer();
+		Customer c2=new Person();
+		Customer c3=new Company();
+	}
+}
